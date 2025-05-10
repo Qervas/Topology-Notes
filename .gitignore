@@ -1,0 +1,22 @@
+# LaTeX intermediate and output files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.nav
+*.snm
+
+# PDF output
+*.pdf
+
+# OS-specific files
+.DS_Store
+Thumbs.db

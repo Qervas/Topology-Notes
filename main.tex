@@ -1,0 +1,100 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{subfiles}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+% Added for topological diagrams
+\usepackage{tikz}
+\usetikzlibrary{topaths,calc}
+
+% Color definitions
+\colorlet{LightGray}{White!90!Periwinkle}
+\colorlet{LightOrange}{Orange!15}
+\colorlet{LightGreen}{Green!15}
+\colorlet{LightBlue}{Cyan!15} % For Examples environment
+
+% Rule command
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+% Theorem styles
+\declaretheoremstyle[name=Theorem,]{thmsty}
+\declaretheorem[style=thmsty,numberwithin=section]{theorem}
+\tcolorboxenvironment{theorem}{colback=LightGray}
+
+\declaretheoremstyle[name=Proposition,]{prosty}
+\declaretheorem[style=prosty,numberlike=theorem]{proposition}
+\tcolorboxenvironment{proposition}{colback=LightOrange}
+
+\declaretheoremstyle[name=Principle,]{prcpsty}
+\declaretheorem[style=prcpsty,numberlike=theorem]{principle}
+\tcolorboxenvironment{principle}{colback=LightGreen}
+
+\declaretheoremstyle[name=Definition,]{defsty}
+\declaretheorem[style=defsty,numberlike=theorem]{definition}
+\tcolorboxenvironment{definition}{colback=white}
+
+% New Examples environment
+\declaretheoremstyle[name=Example,]{exsty}
+\declaretheorem[style=exsty,numberlike=theorem]{example}
+\tcolorboxenvironment{example}{colback=LightBlue}
+
+\declaretheoremstyle[name=Corollary,]{corsty}
+\declaretheorem[style=corsty,numberlike=theorem]{corollary}
+\tcolorboxenvironment{corollary}{colback=LightGray}
+
+% Document spacing and geometry
+\setstretch{1.2}
+\geometry{
+    textheight=9in,
+    textwidth=5.5in,
+    top=1in,
+    headheight=12pt,
+    headsep=25pt,
+    footskip=30pt
+}
+
+% Custom command for topology-specific notation
+\newcommand{\topspace}[2]{\mathcal{#1}, \tau_{#2}} % e.g., \topspace{X}{1} for (X, τ_1)
+
+\begin{document}
+
+% Cover Page
+\title{ \normalsize \textsc{Topology Notes}
+\\ [2.0cm]
+\HRule{1.5pt} \\
+\LARGE \textbf{\uppercase{Introduction to Topology}
+\HRule{2.0pt} \\ [0.6cm] \LARGE{Concepts and Examples} \vspace*{10\baselineskip}}
+}
+\date{\today}
+\author{\textbf{Frank Yin} \\
+	Self-learning Maths \\
+	Sweden}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+% Include chapters
+\include{chapters/chap1}
+
+
+% References
+\bibliographystyle{IEEEtran}
+\begin{thebibliography}{1}
+	\bibitem{Munkres}
+	J. R. Munkres, \emph{Topology}, 2nd ed. Upper Saddle River, NJ: Prentice Hall, 2000.
+\end{thebibliography}
+
+\end{document}
